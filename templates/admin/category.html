@@ -1,0 +1,39 @@
+{% extends 'admin/dashboard.html' %} {% block content %}
+
+  <h2>Category List</h2>
+  <a href="{% url 'create-category' %}" class="btn btn-success">Add New Category</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Category name</th>
+        <th>Number of post</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Demo Data -->
+
+      {% for category in categories %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        
+        <td>{{ category.name }}</td>
+        <td>{{ category.post_set.count }}</td>
+
+        <td>
+          <a href="{% url 'delete-category' category.pk %}" title=" Delete This Category" class="action-icons"
+            ><i class="fas fa-trash-alt"></i
+          ></a>
+          <a href="{% url 'update-category' category.pk %}" title=" Update This Category" class="action-icons"
+            ><i class="fas fa-edit ml-3"></i
+          ></a>
+          
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

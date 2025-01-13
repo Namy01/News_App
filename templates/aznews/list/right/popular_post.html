@@ -1,0 +1,15 @@
+<aside class="single_sidebar_widget popular_post_widget">
+    <h3 class="widget_title">Recent Post</h3>
+    {% for recent in popular_posts %}
+    <div class="media post_item">
+        <img src="{{ recent.featured_image.url }}" alt="{{ recent.title }}"  width="70px">
+        <div class="media-body">
+            <a href="{% url 'post-detail' recent.pk %}">
+                <h3>{{ recent.title|truncatewords:7 }}</h3>
+            </a>
+            <p> {{ recent.published_at|date:"F d, Y" }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    
+</aside>

@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Az News Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'aznews/assets/css/fontawesome-all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'aznews/assets/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'admin/dashboard.css' %}" />
+    <style>
+       .news-details {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-details h5 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .news-details p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .news-details p strong {
+            color: #333;
+        }
+        .news-details .category, .news-details .tags {
+            margin-bottom: 10px;
+        }
+       fieldset {
+            width: 900px;
+            background-color: rgba(0, 106, 255, 0.204);
+            padding: 10px;
+            margin: 20px auto; 
+            border: 1px solid #007bff; 
+            border-radius: 15px; 
+        }
+       
+      .action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .action-buttons a {
+        margin-bottom: 5px;
+    }
+
+      .action-icons {
+        margin-top: 6px;
+        color: #0b0217;
+        text-decoration: none;
+      }
+      .action-icons:hover {
+        color: #2a5e93;
+      }
+      .link {
+        text-decoration: none;
+        color: #2a5e93;
+      }
+      .link:hover {
+        color: #102335;
+        text-decoration: none;
+        text-underline-offset: none;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h2 class="ml-5 mt-3">Az News</h2>
+      <ul>
+        <li>
+          <a href="{% url 'published-post' %}">Published Post</a>
+        </li>
+        <li>
+          <a href="{% url 'draft-post' %}">Draft</a>
+        </li>
+        <li>
+          <a href="{% url 'hidden-post' %}">In-Active Post</a>
+        </li>
+        <li>
+          <a href="{% url 'tags' %}">Tags</a>
+        </li>
+        <li>
+          <a href="{% url 'categories' %}">Categories</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="main-content" id="main-content">
+      <header>
+        <div class="row">
+        <div class="col-md-10">
+          Manage Your Dashboard
+        </div>
+        <div class="col-md-2">
+          {% if request.user.is_authenticated %}
+          <a class="ml-2"  style="color: aliceblue;"   href="/"><i class="fas fa-home"></i></a>
+          <form action="{% url 'logout' %}" method="post" class="top-menu" style="display: inline;">
+          {% csrf_token %}
+          <button type="submit" class="link ml-3" title="Logout" style="background: transparent; border: none; padding: 0; cursor: pointer; color: aliceblue;">
+          <i class="fas fa-sign-out-alt"></i>
+          </button>
+          </form>
+          {% else %}
+          {{ pass }}
+          {% endif %}
+              
+        </div>
+
+      </div>
+         
+            
+      </header>
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn" id="toggle-btn">☰</button>
+    
+                                
+
+    <!-- Main Content -->
+    {% block content %} 
+    {% endblock content %}
+    <script src="{% static 'admin/dashboard.js' %}"></script>
+  </body>
+</html>

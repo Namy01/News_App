@@ -1,0 +1,13 @@
+{% extends "admin/dashboard.html" %}
+
+{% block content %}
+<form action="" method="post" class="post-form" enctype="multipart/form-data">
+    <fieldset>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+</fieldset>
+</form>
+</div>
+{% endblock content %}
+        

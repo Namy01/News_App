@@ -1,0 +1,39 @@
+{% extends 'admin/dashboard.html' %} {% block content %}
+
+  <h2>Tag List</h2>
+  <a href="{% url 'create-tag' %}" class="btn btn-success">Add New Tag</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Tag name</th>
+        <th>Number of post</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Demo Data -->
+
+      {% for tag in tags %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+
+        <td>{{ tag.name }}</td>
+        <td>{{ tag.post_set.count }}</td>
+
+        <td>
+          <a href="{% url 'delete-tag' tag.pk %}" title=" Delete This Tag" class="action-icons"
+            ><i class="fas fa-trash-alt"></i
+          ></a>
+          <a href="{% url 'update-tag' tag.pk %}" title=" Update This Tag" class="action-icons"
+            ><i class="fas fa-edit ml-3"></i
+          ></a>
+          <br />
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

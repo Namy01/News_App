@@ -1,0 +1,61 @@
+{% extends 'admin/dashboard.html' %} {% block content %}
+
+  <h2>Draft List</h2>
+  <a href="{% url 'create' %}" class="btn btn-success">Add New Post</a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Featured Image</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Tags</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>
+          <img
+            src="{{ post.featured_image.url }}"
+            alt="Featured Image"
+            class="featured-image"
+            width="70px"
+          />
+        </td>
+        <td width="400px">
+          <a class="link" href="{% url 'admin-post-detail' post.pk %}"
+            >{{ post.title }} </a
+          >
+        </td>
+        <td>{{ post.category.name }}</td>
+        <td width="200px">{{ post.tag.all|join:", " }}</td>
+        <td class="action-buttons">
+          <a
+            href="{% url 'admin-update' post.pk %}"
+            title="Edit this Post"
+            class="btn btn-sm btn-primary"
+            ><i class="fas fa-edit"></i
+          ></a>
+          <a
+            href="{% url 'delete' post.pk %}"
+            title="Delete this Post"
+            class="btn btn-sm btn-danger"
+            ><i class="fas fa-trash-alt"></i
+          ></a>
+          <a
+            href="{% url 'publish' post.pk %}"
+            title="Publish this post"
+            class="btn btn-sm btn-success"
+            ><i class="fas fa-upload"></i
+          ></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,332 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Az News</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'aznews/assets/img/favicon.ico' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/owl.carousel.min.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/ticker-style.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/flaticon.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/slicknav.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/animate.min.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/magnific-popup.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/fontawesome-all.min.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/themify-icons.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/slick.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/nice-select.css' %}">
+            <link rel="stylesheet" href="{% static 'aznews/assets/css/style.css' %}">
+
+
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                .login-popup {
+                    display: none;
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 999;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .login-popup-content {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 5px;
+                    width: 300px;
+                    position: relative;
+                }
+                .login-popup-content h2 {
+                    margin: 0 0 15px;
+                }
+                .login-popup-content .close-btn {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                }
+                .login-popup-content .form-group {
+                    margin-bottom: 15px;
+                }
+                .login-popup-content .form-group input {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                .login-popup-content .login-btn {
+                    width: 100%;
+                    padding: 10px;
+                    background: #007bff;
+                    border: none;
+                    color: #fff;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .alert {
+                    padding: 10px;
+                    margin-top: 10px;
+                }
+                .alert-success {
+                    background-color: #d4edda;
+                    color: #155724;
+                }
+                .alert-danger {
+                    background-color: #f8d7da;
+                    color: #721c24;
+                }
+            </style>
+   </head>
+
+   <body>
+    {% include 'aznews/header.html' %}
+    {% block content %}
+
+    {% endblock content %}
+    {% include 'aznews/footer.html' %}
+   
+	<!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="{% static 'aznews/assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{% static 'aznews/assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/popper.min.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/bootstrap.min.js' %}"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{% static 'aznews/assets/js/jquery.slicknav.min.js' %}"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{% static 'aznews/assets/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/slick.min.js' %}"></script>
+        <!-- Date Picker -->
+        <script src="{% static 'aznews/assets/js/gijgo.min.js' %}"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{% static 'aznews/assets/js/wow.min.js' %}"></script>
+		<script src="{% static 'aznews/assets/js/animated.headline.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/jquery.magnific-popup.js' %}"></script>
+
+        <!-- Breaking New Pluging -->
+        <script src="{% static 'aznews/assets/js/jquery.ticker.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/site.js' %}"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="{% static 'aznews/assets/js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/jquery.nice-select.min.js' %}"></script>
+		<script src="{% static 'aznews/assets/js/jquery.sticky.js' %}"></script>
+        
+        <!-- contact js -->
+        <script src="{% static 'aznews/assets/js/contact.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/jquery.form.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/mail-script.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/jquery.ajaxchimp.min.js' %}"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="{% static 'aznews/assets/js/plugins.js' %}"></script>
+        <script src="{% static 'aznews/assets/js/main.js' %}"></script>
+        
+
+        <script>
+            $(".pagination_number").click(function(e){
+                e.preventDefault();
+                let current_url = window.location.href.split('?')[0];
+                let params = new URL(document.location).searchParams;
+                let query = params.get("query");
+                let href = $(this).attr('href');
+
+                let new_url = `${current_url}${href}&query=${query}`;
+                window.location.replace(new_url);
+            });
+        </script>
+
+
+
+
+        <script>
+            $("#newsletter_side_form2").submit(function(e)
+        {
+            e.preventDefault()
+            let serializedData = $(this).serialize()
+
+            $.ajax({
+                type: "POST",
+                url : "{% url 'newsletter' %}",
+                data : serializedData,
+                success: function(response){
+                    $("#newsletter_side_message2").append(`
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        ${response.message}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                    `)
+                    $("#newsinput2").on("click", function(){
+                        $(".alert").alert("close");
+                        
+                    });
+                    setTimeout(function() {
+                        $(".alert").alert("close");
+                        
+                    }, 5000);
+
+                    $("#newsletter_side_form2").get(0).reset()
+                },
+
+                error: function(response){
+                    $("#newsletter_side_message2").append(`
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        ${response.responseJSON.message}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                    `)
+                    $("#newsinput2").on("click", function(){
+                        $(".alert").alert("close");
+                    });
+                    setTimeout(function() {
+                        $(".alert").alert("close");
+                        
+                    }, 5000);
+                }
+            })
+        })
+        </script>
+        <script>
+            $("#newsletter_side_form").submit(function(e)
+         {
+            e.preventDefault()
+            let serializedData = $(this).serialize()
+         
+            $.ajax({
+                type: "POST",
+                url : "{% url 'newsletter' %}",
+                data : serializedData,
+                success: function(response){
+                    $("#newsletter_side_message").append(`
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        ${response.message}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                    `)
+                    $("#newsinput").on("click", function(){
+                        $(".alert").alert("close");
+                      
+                    });
+                    setTimeout(function() {
+                        $(".alert").alert("close");
+                        
+                    }, 5000);
+                    $("#newsletter_side_form").get(0).reset()
+                },
+         
+                error: function(response){
+                    $("#newsletter_side_message").append(`
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        ${response.responseJSON.message}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                    `)
+                    $("#newsinput").on("click", function(){
+                        $(".alert").alert("close");
+                    });
+                    setTimeout(function() {
+                        $(".alert").alert("close");
+                    }, 5000);
+                }
+            })
+         })
+         </script>
+        
+
+<script>
+    const loginBtn = document.getElementById('loginBtn');
+    const loginPopup = document.getElementById('loginPopup');
+    const closeBtn = document.getElementById('closeBtn');
+
+    loginBtn.addEventListener('click', function() {
+        loginPopup.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        loginPopup.style.display = 'none';
+    });
+
+
+    window.addEventListener('click', function(e) {
+        if (e.target == loginPopup) {
+            loginPopup.style.display = 'none';
+        }
+    });
+
+    document.getElementById('popupLoginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        fetch("{% url 'login' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        }).then(response => response.json()).then(data => {
+            const messageContainer = document.getElementById('popupLoginMessage');
+            if (data.success) {
+                messageContainer.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+            } else {
+                messageContainer.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+            }
+        }).catch(error => console.error('Error:', error));
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        const weatherDiv = $('#weather');
+        const latitude = 27.712017;
+        const longitude = 85.312950;
+        const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${85.312950}&current_weather=true`;
+
+        $.ajax({
+            url : apiUrl,
+            method : "GET",
+
+            success: function(data){
+                console.log(data)
+                if(data && data.current_weather){
+                    weatherDiv.html(`Current Temperature: ${data.current_weather.temperature}°C`);
+                }
+                else
+                {
+                    weatherDiv.html("Unable to featch the data");
+                }
+            },
+            error: function(){
+                weatherDiv.html("Error fetching the data")
+            }
+        });
+    });
+</script>
+
+
+
+    </body>
+</html>

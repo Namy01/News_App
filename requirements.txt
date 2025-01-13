@@ -1,0 +1,12 @@
+# pip install -r requirements.txt
+Django==5.1.4
+
+#for imagefield pip install pillow
+pillow-11.0.0
+
+#for API pip install djangorestframework
+djangorestframework==3.15.2
+
+requests==2.32.3
+
+django-summernote==0.8.20.0

@@ -1,0 +1,35 @@
+{% extends 'admin/dashboard.html' %}
+{% block content %}
+
+    <h2>Post Detail</h2>
+    <a href="{% url 'create' %}" class="btn btn-success">Add New Post</a>
+    <div class="container mt-5">
+        
+        <div class="row">
+           
+            <div class="col-md-10">
+                <div class="post-card">
+                    <div class="news-details">
+                        <img src="{{ post.featured_image.url }}" alt="Featured Image" class="featured-image" width="700px">
+                        <h5><strong>Title:</strong> {{ post.title }}</h5>
+                        <p class="category"><strong>Category:</strong> {{ post.category.name }}</p>
+                        <p class="tags"><strong>Tags:</strong> {{ post.tag.all|join:", " }}</p>
+                        <p>{{ post.content|safe|linebreaksbr }}</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="action-buttons">
+                    <td class="action-buttons">
+                        <a href="{% url 'admin-update' post.pk %}" title="Edit this Post" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                        <a href="{% url 'delete' post.pk %}" title="Delete this Post" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                    
+                      </td> 
+                   
+                </div>
+               </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
